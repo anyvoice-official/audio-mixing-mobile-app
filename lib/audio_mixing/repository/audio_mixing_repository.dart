@@ -10,12 +10,8 @@ class AudioMixingRepository {
 	final ApiClient _api = ApiClient(dio);
 
 	Future<AudioMixing> audioMixing(File file) async {
-		try {
-			final response = await _api.audioMixing(file);
-			
-			return response.toModel();
-		} on Exception {
-			rethrow;
-		}
+		final response = await _api.audioMixing(file);
+		
+		return response.toModel();
 	}
 }
